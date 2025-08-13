@@ -28,6 +28,7 @@
 */corpus/*
 */mlruns/*
 working/
+myvenv/
 
 ### JupyterNotebooks ###
 # gitignore template for Jupyter Notebooks
