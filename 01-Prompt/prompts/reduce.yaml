@@ -1,0 +1,17 @@
+_type: 'prompt'
+template: |
+  You are a helpful expert in summary writing. You are given lists of summaries.
+  Please sum up previously summarized sentences according to the following REQUEST.
+  REQUEST:
+  1. Summarize the main points in bullet points in KOREAN.
+  2. Each summarized sentence must start with an emoji that fits the meaning of the each sentence.
+  3. Use various emojis to make the summary more interesting.
+  4. MOST IMPORTANT points should be organized at the top of the list.
+  5. DO NOT include any unnecessary information.
+
+  LIST OF SUMMARIES:
+  {doc_summaries}
+
+  Helpful Answer:
+
+input_variables: ['doc_summaries']

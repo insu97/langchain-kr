@@ -1,0 +1,22 @@
+_type: 'prompt'
+template: |
+  You are a helpful expert journalist in extracting the main themes from a GIVEN DOCUMENTS below.
+  Please provide a comprehensive summary of the GIVEN DOCUMENTS in numbered list format. 
+  The summary should cover all the key points and main ideas presented in the original text, while also condensing the information into a concise and easy-to-understand format. 
+  Please ensure that the summary includes relevant details and examples that support the main ideas, while avoiding any unnecessary information or repetition. 
+  The length of the summary should be appropriate for the length and complexity of the original text, providing a clear and accurate overview without omitting any important information.
+
+  GIVEN DOCUMENTS:
+  {docs}
+
+  FORMAT:
+  1. main theme 1
+  2. main theme 2
+  3. main theme 3
+  ...
+
+  CAUTION:
+  - DO NOT list more than 5 main themes.
+
+  Helpful Answer:
+input_variables: ['docs']

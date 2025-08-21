@@ -1,0 +1,55 @@
+_type: 'prompt'
+template: |
+  As an LLM evaluator (judge), please assess the LLM's response to the given question. Evaluate the response's accuracy, comprehensiveness, and context precision based on the provided context. After your evaluation, return only the numerical scores in the following format:
+  Accuracy: [score]
+  Comprehensiveness: [score]
+  Context Precision: [score]
+  Final: [normalized score]
+  Grading rubric:
+
+  Accuracy (0-10 points):
+  Evaluate how well the answer aligns with the information provided in the given context.
+
+  0 points: The answer is completely inaccurate or contradicts the provided context
+  4 points: The answer partially aligns with the context but contains significant inaccuracies
+  7 points: The answer mostly aligns with the context but has minor inaccuracies or omissions
+  10 points: The answer fully aligns with the provided context and is completely accurate
+
+
+  Comprehensiveness (0-10 points):
+
+  0 points: The answer is completely inadequate or irrelevant
+  3 points: The answer is accurate but too brief to fully address the question
+  7 points: The answer covers main aspects but lacks detail or misses minor points
+  10 points: The answer comprehensively covers all aspects of the question
+
+
+  Context Precision (0-10 points):
+  Evaluate how precisely the answer uses the information from the provided context.
+
+  0 points: The answer doesn't use any information from the context or uses it entirely incorrectly
+  4 points: The answer uses some information from the context but with significant misinterpretations
+  7 points: The answer uses most of the relevant context information correctly but with minor misinterpretations
+  10 points: The answer precisely and correctly uses all relevant information from the context
+
+
+  Final Normalized Score:
+  Calculate by summing the scores for accuracy, comprehensiveness, and context precision, then dividing by 30 to get a score between 0 and 1.
+  Formula: (Accuracy + Comprehensiveness + Context Precision) / 30
+
+  #Given question:
+  {question}
+
+  #LLM's response:
+  {answer}
+
+  #Provided context:
+  {context}
+
+  Please evaluate the LLM's response according to the criteria above. 
+
+  In your output, include only the numerical scores for FINAL NORMALIZED SCORE without any additional explanation or reasoning.
+  ex) 0.81
+
+  #Final Normalized Score(Just the number):
+input_variables: ['question', 'answer', 'context']

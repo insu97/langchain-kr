@@ -1,0 +1,14 @@
+_type: 'prompt'
+template: |
+  Please summarize the sentence according to the following REQUEST.
+  REQUEST:
+  1. Summarize the main points in bullet points.
+  2. Each summarized sentence must start with an emoji that fits the meaning of the each sentence.
+  3. Use various emojis to make the summary more interesting.
+  4. DO NOT include any unnecessary information.
+
+  CONTEXT:
+  {context}
+
+  SUMMARY:
+input_variables: ['context']
